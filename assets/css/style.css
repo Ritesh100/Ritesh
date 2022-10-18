@@ -65,7 +65,7 @@ p {
   color: #fff;
 }
 
-.btn {
+/* .btn {
   background: #333;
   border: medium none;
   border-radius: 0;
@@ -75,7 +75,7 @@ p {
   line-height: 50px;
   padding: 0 30px;
   text-transform: uppercase;
-}
+} */
 
 .btn:hover,
 .btn:focus {
