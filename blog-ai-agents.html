@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Understanding AI Agents: Types and Environments</title>
+  <meta name="description" content="A comprehensive guide to Artificial Intelligence Agents, exploring the core components, 5 types of AI agents, and the digital environments they operate within.">
+  <meta name="keywords" content="AI Agent, Artificial Intelligence, Types of AI, AI Environment, Machine Learning, Tech Blog">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3Q2Q1XTSN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T3Q2Q1XTSN');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+  <style>
+    /* Inlining the mobile nav override since it's in index.html */
+    .mobile-nav-toggle { display: none; font-size: 28px; cursor: pointer; color: #fff; line-height: 1; transition: color 0.3s; z-index: 9999; }
+    @media (max-width: 991px) {
+      .mobile-nav-toggle { display: block; }
+      #navbar ul { display: none; flex-direction: column; position: fixed; top: 0; right: -100%; width: 260px; height: 100vh; background: #0f172a; padding: 60px 20px 20px; gap: 0; box-shadow: -4px 0 20px rgba(0,0,0,0.4); transition: right 0.35s ease; z-index: 9998; overflow-y: auto; }
+      #navbar.navbar-mobile ul { display: flex; right: 0; }
+      #navbar.navbar-mobile ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+      #navbar.navbar-mobile ul li a { display: block; padding: 14px 10px; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: 0.5px; transition: color 0.2s, padding-left 0.2s; }
+      #navbar.navbar-mobile ul li a:hover, #navbar.navbar-mobile ul li a.active { color: #0ea5e9; padding-left: 18px; }
+      .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 996; backdrop-filter: blur(2px); }
+      .mobile-nav-overlay.active { display: block; }
+      #navbar.navbar-mobile ~ .mobile-nav-toggle::before { content: none; }
+    }
+    
+    /* Blog specific styles */
+    .blog-header {
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    .blog-header h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blog-content {
+      background: var(--dark-card);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .blog-content h2 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .blog-content h3 {
+      font-size: 22px;
+      color: #e2e8f0;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .blog-content p, .blog-content li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .blog-content img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 30px 0;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">RITESH</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html#hero">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#skills">Skills</a></li>
+          <li><a class="nav-link" href="index.html#portfolio">My projects</a></li>
+          <li><a class="nav-link active" href="index.html#journal">Blog</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle" id="mobileNavToggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="blog-header">
+      <div class="container" data-aos="fade-up">
+        <h1>Understanding AI Agents:<br>Types, Environments, and the Future</h1>
+        <p style="font-size: 18px; color: var(--text-muted);">A comprehensive guide to how Artificial Intelligence systems perceive, think, and act.</p>
+      </div>
+    </section>
+
+    <section class="container" data-aos="fade-up" data-aos-delay="200">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="blog-content">
+            <img src="assets/img/ai-agent-hero.png" alt="AI Agent Hero Illustration">
+            
+            <p>Artificial Intelligence is rapidly evolving from simple pattern recognition tools to autonomous systems capable of executing complex workflows. At the heart of this evolution is the concept of an <strong>AI Agent</strong>.</p>
+            
+            <h2>What is an AI Agent?</h2>
+            <p>In artificial intelligence, an <strong>agent</strong> is anything that can perceive its environment through <em>sensors</em> and act upon that environment through <em>actuators</em>. A human agent has eyes, ears, and other organs for sensors, and hands, legs, mouth, and other body parts for actuators. Similarly, a robotic agent uses cameras and infrared range finders for sensors, and various motors for actuators.</p>
+            <p>For a software AI agent, the environment is digital. Its sensors might be API inputs, keystrokes, or network packets, while its actuators could be writing files, sending HTTP requests, or displaying output on a screen.</p>
+            
+            <h2>The 5 Core Types of AI Agents</h2>
+            <img src="assets/img/ai-types-diagram.png" alt="Types of AI Agents Diagram">
+            <p>Depending on their degree of perceived intelligence and capability, AI agents are broadly categorized into five types:</p>
+            
+            <h3>1. Simple Reflex Agents</h3>
+            <p>These agents operate solely based on the current percept, ignoring the rest of the percept history. They use condition-action rules (if-then statements). They only function optimally if the environment is fully observable. Example: A smart thermostat that turns on the heater only when the temperature drops below a specific threshold.</p>
+            
+            <h3>2. Model-Based Reflex Agents</h3>
+            <p>Unlike simple reflex agents, model-based agents maintain an internal state that depends on the percept history. They have a "model" of how the world works, allowing them to handle partially observable environments. They understand how the environment evolves independently of the agent and how the agent's actions affect the world.</p>
+            
+            <h3>3. Goal-Based Agents</h3>
+            <p>Knowing about the current state of the environment is not always enough to decide what to do. The agent needs goal information that describes situations that are desirable. Goal-based agents use search and planning algorithms to find a sequence of actions that achieves their goals.</p>
+            
+            <h3>4. Utility-Based Agents</h3>
+            <p>Goals alone do not guarantee high-quality behavior. If there are multiple ways to reach a goal, a utility-based agent calculates how "happy" each state makes it. It uses a utility function to map a state onto a real number, ensuring it not only reaches the goal but does so via the most efficient or cost-effective path.</p>
+            
+            <h3>5. Learning Agents</h3>
+            <p>Learning agents are designed to improve their performance over time based on experience. They consist of four main components: the learning element (makes improvements), the performance element (selects external actions), the critic (evaluates how well the agent is doing), and the problem generator (suggests actions that will lead to new and informative experiences).</p>
+
+            <h2>Understanding the AI Environment</h2>
+            <p>An agent cannot be fully understood without its environment. In AI design, environments are classified based on several key properties:</p>
+            <ul>
+              <li><strong>Fully Observable vs. Partially Observable:</strong> If the agent's sensors give it access to the complete state of the environment at each point in time, it's fully observable (like a Chess board). If not, it's partially observable (like a poker game).</li>
+              <li><strong>Deterministic vs. Stochastic:</strong> If the next state of the environment is completely determined by the current state and the agent's action, it is deterministic. If there's an element of randomness, it's stochastic (like driving a car).</li>
+              <li><strong>Episodic vs. Sequential:</strong> In an episodic environment, the agent's experience is divided into atomic "episodes" (e.g., classifying an image). In sequential environments, the current decision could affect all future decisions.</li>
+              <li><strong>Static vs. Dynamic:</strong> If the environment can change while an agent is deliberating, it is dynamic. If it doesn't change, it's static.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>As we move towards Artificial General Intelligence (AGI), understanding the foundational architecture of AI agents and their environments becomes crucial. By combining learning mechanisms with robust utility models in dynamic environments, we are paving the way for software that doesn't just assist us, but autonomously solves problems on our behalf.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+        <ul class="list-unstyled">
+          <li><a href="https://www.facebook.com/ritesh.thapa.96155"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="https://www.instagram.com/invites/contact/?i=5lt8p3n73zbr&utm_content=1u9pxss"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/ritesh-thapa-b85942178"><i class="bi bi-linkedin"></i></a></li>
+        </ul>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://reteshthapa.com.np/">Ritesh Thapa</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- ======= Mobile Nav Toggle Script ======= -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('mobileNavToggle');
+      const navbar = document.getElementById('navbar');
+      const overlay = document.getElementById('mobileNavOverlay');
+
+      if(toggle && navbar && overlay) {
+        function openMenu() {
+          navbar.classList.add('navbar-mobile');
+          overlay.classList.add('active');
+          toggle.classList.remove('bi-list');
+          toggle.classList.add('bi-x');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          navbar.classList.remove('navbar-mobile');
+          overlay.classList.remove('active');
+          toggle.classList.remove('bi-x');
+          toggle.classList.add('bi-list');
+          document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (navbar.classList.contains('navbar-mobile')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        overlay.addEventListener('click', closeMenu);
+
+        navbar.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (navbar.classList.contains('navbar-mobile')) {
+              closeMenu();
+            }
+          });
+        });
+      }
+    })();
+  </script>
+
+  <!-- Custom Cursor & AOS Init -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+      if (cursorDot && cursorOutline) {
+        window.addEventListener("mousemove", function(e) {
+          const posX = e.clientX;
+          const posY = e.clientY;
+
+          cursorDot.style.left = `${posX}px`;
+          cursorDot.style.top = `${posY}px`;
+
+          cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+          }, { duration: 500, fill: "forwards" });
+        });
+
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursorOutline.classList.add('cursor-hover');
+          });
+          el.addEventListener('mouseleave', () => {
+            cursorOutline.classList.remove('cursor-hover');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
