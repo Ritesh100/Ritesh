@@ -1,0 +1,27 @@
+/* Shared full-width light theme for the portfolio and journal. */
+:root{--bg:#fbfaf7;--surface:#fff;--surface-2:#f3f0ea;--text:#191816;--muted:#68645f;--line:#d9d4cc;--accent:#e95f00;--accent2:#ff7a22;--dark-card:#fff;--text-muted:#68645f;--max:1440px}
+html{background:#fbfaf7}body{background:#fbfaf7!important;color:#191816!important}
+body:before{display:none!important}
+.page-shell{width:100%!important;max-width:none!important;margin:0!important;border:0!important;border-radius:0!important;background:#fbfaf7!important;box-shadow:none!important}
+.site-header{max-width:1440px!important;background:#fbfaf7!important;border-color:#e1ddd5!important}
+.brand,.logo a{color:#191816!important}
+.site-nav a,.navbar a{color:#68645f!important}
+.site-nav a:hover,.site-nav a.active,.navbar a:hover,.navbar .active{color:#e95f00!important}
+.button{background:#e95f00!important;border-color:#e95f00!important;color:#fff!important}
+.button:hover{background:#c94f00!important}.button-ghost{background:transparent!important;border-color:#8b857d!important;color:#191816!important}.button-ghost:hover{background:#191816!important;color:#fff!important;border-color:#191816!important}
+.hero,.section,.contact-section,footer{max-width:1440px!important}
+.hero-visual:before{background:linear-gradient(145deg,#f0ede7,#ddd8d0)!important}.hero-visual img{filter:none!important;mix-blend-mode:normal!important}.portrait-ring{border-color:#e5e0d8!important}.availability{background:#ffffffeb!important;border-color:#d8d2c9!important;color:#282521!important}
+.metrics,.section,.contact-section,footer{border-color:#ded9d1!important}.metrics div{border-color:#d4cec5!important}.metrics dd{color:#68645f!important}
+.service-grid article{background:#fff!important;border-color:#ddd8cf!important;box-shadow:0 12px 35px rgba(42,35,25,.06)}.service-grid article:hover{border-color:#e95f00!important}.service-grid article>span{color:#aaa39a!important}
+.skills li{color:#5f5a54!important;border-color:#d7d1c8!important;background:#fff!important}
+.project-image{background:#e8e3dc!important}.project-image img{filter:none!important}.project:hover .project-image img{filter:none!important}
+.journal-list,.journal-list a{border-color:#d9d4cc!important}.contact-section{background:#f2eee7!important;max-width:none!important;padding-left:max(20px,calc((100% - 1380px)/2))!important;padding-right:max(20px,calc((100% - 1380px)/2))!important}
+.social-row a{border-color:#cfc9c0!important;color:#68645f!important}.text-link{color:#191816!important}
+/* Article pages */
+#header{top:0!important;left:0!important;right:0!important;width:100%!important;background:#fbfaf7f2!important;border-color:#ded9d1!important}
+.blog-header{background:#f3f0ea!important}.blog-header h1{-webkit-text-fill-color:#191816!important;color:#191816!important}.blog-header p{color:#68645f!important}
+.blog-content{background:#fff!important;border-color:#ddd8cf!important;box-shadow:0 18px 55px rgba(50,42,30,.07)!important}
+.blog-content h2{color:#191816!important;border-color:#ded9d1!important}.blog-content h3{color:#c85000!important}.blog-content p,.blog-content li{color:#57534e!important}.blog-content strong{color:#191816!important}.blog-content blockquote{background:#f4f0e9!important;color:#34312d!important}.blog-content table{background:#fff!important;color:#34312d!important}.blog-content img{border-color:#d8d2c9!important}
+#footer{background:#f3f0ea!important;border-color:#ddd8cf!important;color:#68645f!important}
+.back-to-top{background:#e95f00!important;color:#fff!important}
+@media(max-width:991px){.site-header{background:#fbfaf7f2!important}.site-nav,#navbar ul{background:#fff!important}.menu-toggle span{background:#191816!important}.mobile-nav-toggle{color:#191816!important}.hero,.section{padding-left:24px!important;padding-right:24px!important}.blog-header{padding-left:20px!important;padding-right:20px!important}}
